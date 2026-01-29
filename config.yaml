@@ -1,0 +1,20 @@
+# 核心配置：使用 DeepSeek
+llm:
+  enable: true
+  provider: "openai"  # DeepSeek 兼容 OpenAI 协议，这里必须填 openai
+  openai:
+    api_key: "${LLM_API_KEY}"  # 这里会自动读取我们在 Secret 里填的密码
+    model: "deepseek-chat"     # DeepSeek 的模型名字
+    base_url: "https://api.deepseek.com" # DeepSeek 的接口地址
+
+# 股票配置 (默认开启 A 股)
+data:
+  stock:
+    enable: true
+    codes: ["sh000001"] # 默认只看上证指数，你可以改成你想看的股票代码，比如 ["sh600519", "sz000001"]
+
+# 推送配置
+notify:
+  enable: true
+  pushplus:
+    token: "${PUSHPLUS_TOKEN}" # 自动读取 Secret
