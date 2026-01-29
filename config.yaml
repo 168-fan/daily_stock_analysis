@@ -3,7 +3,7 @@ llm:
   enable: true
   provider: "openai"  # DeepSeek 兼容 OpenAI 协议，这里必须填 openai
   openai:
-    api_key: "${LLM_API_KEY}"  # 这里会自动读取我们在 Secret 里填的密码
+    api_key: "${GEMINI_API_KEY}"  # 这里会自动读取我们在 Secret 里填的密码
     model: "deepseek-chat"     # DeepSeek 的模型名字
     base_url: "https://api.deepseek.com" # DeepSeek 的接口地址
 
